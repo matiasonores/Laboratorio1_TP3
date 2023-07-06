@@ -54,6 +54,22 @@ namespace WindowsFormsApp3
         {
             get { return this.multados; }
         }
+        public bool VerificarExistenciaPatente(int patente)
+        {
+            bool Encontrado = false;
+            foreach (Vehiculo j in vehiculos)
+            {
+                if (j != null)
+                {
+
+                if (j.Patente == patente)
+                {
+                    Encontrado = true;
+                }
+                }
+            }
+            return Encontrado;
+        }
         public double CalcularRecargoPeso(int cargaVehiculo, double capacidadVehiculo)
         {
             int carga = cargaVehiculo;

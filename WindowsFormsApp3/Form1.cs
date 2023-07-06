@@ -21,6 +21,14 @@ namespace WindowsFormsApp3
 
       private void btnAgregar_Click(object sender, EventArgs e)
         {
+         int patente = Convert.ToInt32(txtPatente.Text);
+            bool existe = sistema.VerificarExistenciaPatente(patente);
+            if (existe == true)
+            {
+                MessageBox.Show("Ya tenemos un vehiculo con esa patente registrado");
+            } else
+            {
+
             string vehiculo="";
             if (rBFurgon.Checked) 
             {
@@ -36,7 +44,6 @@ namespace WindowsFormsApp3
                 domingo_feriado = true;
 
             }
-         int patente = Convert.ToInt32(txtPatente.Text);
          double capacidad = Convert.ToDouble(txtCapacidad.Text);
          string dia = (txtDias.Text);
          int tipoA = Convert.ToInt32(numPaquetesA.Value);
@@ -49,6 +56,7 @@ namespace WindowsFormsApp3
          string ticket = sistema.GenerarTicket();
 
          MessageBox.Show(ticket);
+            }
             
 
         }
