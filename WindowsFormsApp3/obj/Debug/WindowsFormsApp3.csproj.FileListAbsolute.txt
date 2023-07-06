@@ -31,3 +31,15 @@ D:\Usuario\OneDrive\Escritorio\Facultad\Tp3Lab1\Laboratorio1_TP3\WindowsFormsApp
 D:\Usuario\OneDrive\Escritorio\Facultad\Tp3Lab1\Laboratorio1_TP3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.pdb
 D:\Usuario\OneDrive\Escritorio\Facultad\Tp3Lab1\Laboratorio1_TP3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.ConfirmacionFinalizacion.resources
 D:\Usuario\OneDrive\Escritorio\Facultad\Tp3Lab1\Laboratorio1_TP3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Lista_Multados.resources
+C:\Users\Topito\Documents\UTN\Laboratorio 1\Laboratorio1_TP3\Laboratorio1_TP3-develop\WindowsFormsApp3\bin\Debug\WindowsFormsApp3.exe.config
+C:\Users\Topito\Documents\UTN\Laboratorio 1\Laboratorio1_TP3\Laboratorio1_TP3-develop\WindowsFormsApp3\bin\Debug\WindowsFormsApp3.exe
+C:\Users\Topito\Documents\UTN\Laboratorio 1\Laboratorio1_TP3\Laboratorio1_TP3-develop\WindowsFormsApp3\bin\Debug\WindowsFormsApp3.pdb
+C:\Users\Topito\Documents\UTN\Laboratorio 1\Laboratorio1_TP3\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.csproj.AssemblyReference.cache
+C:\Users\Topito\Documents\UTN\Laboratorio 1\Laboratorio1_TP3\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.ConfirmacionFinalizacion.resources
+C:\Users\Topito\Documents\UTN\Laboratorio 1\Laboratorio1_TP3\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Form1.resources
+C:\Users\Topito\Documents\UTN\Laboratorio 1\Laboratorio1_TP3\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Lista_Multados.resources
+C:\Users\Topito\Documents\UTN\Laboratorio 1\Laboratorio1_TP3\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Properties.Resources.resources
+C:\Users\Topito\Documents\UTN\Laboratorio 1\Laboratorio1_TP3\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.csproj.GenerateResource.cache
+C:\Users\Topito\Documents\UTN\Laboratorio 1\Laboratorio1_TP3\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.csproj.CoreCompileInputs.cache
+C:\Users\Topito\Documents\UTN\Laboratorio 1\Laboratorio1_TP3\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.exe
+C:\Users\Topito\Documents\UTN\Laboratorio 1\Laboratorio1_TP3\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.pdb

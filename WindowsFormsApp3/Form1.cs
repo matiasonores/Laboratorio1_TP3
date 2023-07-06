@@ -10,79 +10,89 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp3
 {
-    public partial class Form1 : Form
-    {
-        public Form1()
-        {
-            InitializeComponent();
-            this.Text = "Tp3 Laboratorio";
-        }
+   public partial class Form1 : Form
+   {
+      public Form1()
+      {
+         InitializeComponent();
+         this.Text = "Tp3 Laboratorio";
+         txtDias.Items.Add("Domingo");
+         txtDias.Items.Add("Lunes");
+         txtDias.Items.Add("Martes");
+         txtDias.Items.Add("Miercoles");
+         txtDias.Items.Add("Jueves");
+         txtDias.Items.Add("Viernes");
+         txtDias.Items.Add("Sabado");
+         txtDias.DropDownStyle = ComboBoxStyle.DropDownList;
+
+      }
       Sistema sistema = new Sistema();
 
       private void btnAgregar_Click(object sender, EventArgs e)
-        {
+      {
          int patente = Convert.ToInt32(txtPatente.Text);
-            bool existe = sistema.VerificarExistenciaPatente(patente);
-            if (existe == true)
-            {
-                MessageBox.Show("Ya tenemos un vehiculo con esa patente registrado");
-            } else
-            {
+         bool existe = sistema.VerificarExistenciaPatente(patente);
+         if (existe == true)
+         {
+            MessageBox.Show("Ya tenemos un vehiculo con esa patente registrado");
+         }
+         else
+         {
 
-            string vehiculo="";
-            if (rBFurgon.Checked) 
+            string vehiculo = "";
+            if (rBFurgon.Checked)
             {
-                vehiculo = "Furgon";
+               vehiculo = "Furgon";
             }
-            if (rBCamion.Checked )
+            if (rBCamion.Checked)
             {
-                vehiculo = "Camion";
+               vehiculo = "Camion";
             }
-            bool domingo_feriado = false;
-            if (rBEspeciales.Checked)
+            bool feriado = false;
+            double capacidad = Convert.ToDouble(txtCapacidad.Text);
+            string dia = (txtDias.Text);
+            if (rBEspeciales.Checked || dia=="Domingo")
             {
-                domingo_feriado = true;
-
+               feriado = true;
             }
-         double capacidad = Convert.ToDouble(txtCapacidad.Text);
-         string dia = (txtDias.Text);
-         int tipoA = Convert.ToInt32(numPaquetesA.Value);
-         int tipoB = Convert.ToInt32(numPaquetesA.Value);
-         int tipoC = Convert.ToInt32(numPaquetesA.Value);
-         int minutos = Convert.ToInt32(numHr.Value) * 60;
-         minutos += Convert.ToInt32(numMin.Value);
-         string fechaRegistro = dia;
-         bool multa = sistema.CargarVehiculo(vehiculo, patente, capacidad, tipoA, tipoB, tipoC, domingo_feriado, minutos, fechaRegistro);
-         string ticket = sistema.GenerarTicket();
+            int tipoA = Convert.ToInt32(numPaquetesA.Value);
+            int tipoB = Convert.ToInt32(numPaquetesA.Value);
+            int tipoC = Convert.ToInt32(numPaquetesA.Value);
+            int minutos = Convert.ToInt32(numHr.Value) * 60;
+            minutos += Convert.ToInt32(numMin.Value);
+            string fechaRegistro = dia;
+            bool multa = sistema.CargarVehiculo(vehiculo, patente, capacidad, tipoA, tipoB, tipoC, feriado, minutos, fechaRegistro);
+            string ticket = sistema.GenerarTicket();
 
-         MessageBox.Show(ticket);
-            }
-            
+            MessageBox.Show(ticket);
+         }
 
-        }
 
-        private void btnFinalizarDia_Click(object sender, EventArgs e)
-        {
-            ConfirmacionFinalizacion confirmacion = new ConfirmacionFinalizacion();
-            confirmacion.ShowDialog();
-            if (confirmacion.DialogResult == DialogResult.OK)
+      }
+
+      private void btnFinalizarDia_Click(object sender, EventArgs e)
+      {
+         ConfirmacionFinalizacion confirmacion = new ConfirmacionFinalizacion();
+         confirmacion.ShowDialog();
+         if (confirmacion.DialogResult == DialogResult.OK)
+         {
+            Vehiculo[] multas = this.sistema.GenerarArrayNuevoMultas();
+            if (multas.Length > 0)
             {
-                Vehiculo[] multas = this.sistema.GenerarArrayNuevoMultas();
-                if (multas.Length > 0)
-                {
 
-                Lista_Multados listamultados = new Lista_Multados(multas);
-                foreach(Vehiculo i in multas)
-                    {
-                        listamultados.lbMultas.Items.Add(i.Patente.ToString());
-                    }
-                listamultados.ShowDialog();
-                } else
-                {
-                    MessageBox.Show("No existen Multas");
-                }
-                this.Close();
+               Lista_Multados listamultados = new Lista_Multados(multas);
+               foreach (Vehiculo i in multas)
+               {
+                  listamultados.lbMultas.Items.Add(i.Patente.ToString());
+               }
+               listamultados.ShowDialog();
             }
-        }
-    }
+            else
+            {
+               MessageBox.Show("No existen Multas");
+            }
+            this.Close();
+         }
+      }
+   }
 }
