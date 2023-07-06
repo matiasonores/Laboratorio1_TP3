@@ -13,28 +13,29 @@ namespace WindowsFormsApp3
       private int pesoC = 30; //Constante de peso A
       public string Tipovehiculo { get; private set; }
       public double Capacidad { get; private set; }
-      private int tipoA;
-      private int tipoB;
-      private int tipoC;
+      public int TipoA { get; private set; }
+      public int TipoB { get; private set; }
+      public int TipoC { get; private set; }
       public int Patente { get; private set; }
       public int Carga { get; private set; }
-      
-      bool multado;
-      public bool ValorFijo { get; set; }
+      public bool Multado { get; private set; }
+      public bool ValorFijo { get; private set; }
       public double Abona { get; private set; }
+      public string FechaRegistro { get; private set; }
 
 
-      public Vehiculo(string vehiculo, int patente, double capacidad, int tipoA, int tipoB, int tipoC)
+      public Vehiculo(string vehiculo, int patente, double capacidad, int tipoA, int tipoB, int tipoC, string fechaRegistro)
       {
          this.Patente = patente;
          this.Tipovehiculo = vehiculo;
          this.Capacidad = capacidad;
-         this.tipoA = tipoA;
-         this.tipoB = tipoB;
-         this.tipoC = tipoC;
-         multado = false;
+         TipoA = tipoA;
+         TipoB = tipoB;
+         TipoC = tipoC;
+         Multado = false;
          ValorFijo = false;
-         Carga = DeterminarCarga(tipoA,tipoB,tipoC);
+         FechaRegistro = fechaRegistro;
+         Carga = DeterminarCarga(TipoA, TipoB, TipoC);
       }
 
       public int DeterminarCarga(int cantidadA, int cantidadB, int cantidadC)
@@ -42,9 +43,13 @@ namespace WindowsFormsApp3
          Carga = pesoA * cantidadA + pesoB * cantidadB + pesoC * cantidadC;
          return Carga;
       }
-      public void MultarVehiculo() //Alternativa a plantear una propiedad
+      public void MultarVehiculo()
       {
-         multado = true;
+         Multado = true;
+      }
+      public void AplicarFijo()
+      {
+         ValorFijo = true;
       }
 
       public void Abonar(double montoAPagar)

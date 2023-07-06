@@ -37,8 +37,8 @@ namespace WindowsFormsApp3
          int tipoC = Convert.ToInt32(numPaquetesC);
          int minutos = Convert.ToInt32(numHr) * 60;
          minutos += Convert.ToInt32(numMin);
-
-         Vehiculo transporte = new Vehiculo(vehiculo, patente, capacidad, tipoA, tipoB, tipoC);
+         string fechaRegistro = dia;
+         Vehiculo transporte = new Vehiculo(vehiculo, patente, capacidad, tipoA, tipoB, tipoC, fechaRegistro);
          string ticket = sistema.GenerarTicket();
          MessageBox.Show(ticket);
 
