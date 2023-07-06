@@ -6,176 +6,218 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp3
 {
-   class Sistema
-   {
-      private double costoKg;
-      Vehiculo[] multados;
-      Vehiculo[] vehiculos;
-      int multas;
-      int cantidadVehiculos;
-      double recargoPeso;
-      double recargoDia;
-      double valorMulta;
-      double valorFijo;
-      bool nuevoMultado;
+    public class Sistema
+    {
+        private double costoKg;
+        private Vehiculo[] multados;
+        private Vehiculo[] vehiculos;
+        private int multas;
+        private int cantidadVehiculos;
+        private double recargoPeso;
+        private double recargoDia;
+        private double valorMulta;
+        private double valorFijo;
+        private bool nuevoMultado;
 
-      public Sistema()
-      {
-         multados = new Vehiculo[20];
-         vehiculos = new Vehiculo[100];
-         multas = 0;
-         cantidadVehiculos = 0;
-         costoKg = 2.54;
-         valorMulta = 5000;
-         valorFijo = 3500;
-         nuevoMultado = false;
-
-      }
-      public void CargarVehiculo(string tipo, int patente, double capacidad, int tipoA, int tipoB, int tipoC, bool dia, int minutos, string fechaRegistro)
-      {
-         Vehiculo vehiculo = new Vehiculo(tipo, patente, capacidad, tipoA, tipoB, tipoC, fechaRegistro);
-         vehiculos[cantidadVehiculos] = vehiculo;
-         recargoPeso = CalcularRecargoPeso(vehiculo.Carga, vehiculo.Capacidad);
-         if (nuevoMultado)
-         {
-            OrdenarMultados();
+        public Sistema()
+        {
+            multados = new Vehiculo[20];
+            vehiculos = new Vehiculo[100];
+            multas = 0;
+            cantidadVehiculos = 0;
+            costoKg = 2.54;
+            valorMulta = 5000;
+            valorFijo = 3500;
             nuevoMultado = false;
-         }
-         recargoDia = VerificarDiaHora(dia, minutos);
-         CalcularCosto();
-         GenerarTicket();
-         cantidadVehiculos++;
-      }
 
-      public double CalcularRecargoPeso(int cargaVehiculo, double capacidadVehiculo)
-      {
-         int carga = cargaVehiculo;
-         double capacidad = capacidadVehiculo;
-         double recargo = 0;
-         double excesoCarga = carga - capacidad;
-
-         if (excesoCarga > 50)
-         {
-            recargo = 1.5; //Recargo 50%
-            vehiculos[cantidadVehiculos].MultarVehiculo(); //y multa
-            multados[multas] = vehiculos[cantidadVehiculos];
-            multas++;
-            nuevoMultado = true;
-         }
-         else if (excesoCarga > 10)
-         {
-            recargo = 1.18; //Recargo 18%
-         }
-         else if (excesoCarga > -10)
-         {
-            recargo = 0.95; //Bonificacion 5%
-         }
-         else if (excesoCarga > -150)
-         {
-            recargo = 1.07; //Recargo 7%
-         }
-         else
-         {
-            recargo = 1.10; //Recargo 10%
-         }
-         return recargo;
-      }
-
-      public double VerificarDiaHora(bool domingo, int minutos)
-      {
-         double recargo;
-         if (minutos < 360 && minutos > 1200)
-         {
-            recargo = 1.08; //Recargo 8%
-            vehiculos[cantidadVehiculos].AplicarFijo();
-         }
-         else
-         {
-            recargo = 0.98; //Bonificacion 2%
-         }
-         return recargo;
-      }
-
-      public void CalcularCosto()
-      {
-         double costoFinal = 0;
-         double costoBase = vehiculos[cantidadVehiculos].Carga * costoKg; //100
-         double costoConPeso = costoBase * recargoPeso;                   //150
-         double costoConDia = costoConPeso * recargoDia;                  //150*1.08 (+8%)
-         costoFinal += costoConDia;                                       //162
-         if (vehiculos[cantidadVehiculos].Multado)
-         {
-            costoFinal = valorMulta;                                      //+5000
-         }
-         if (vehiculos[cantidadVehiculos].ValorFijo)
-         {
-            costoFinal += valorFijo;                                      //+3500
-         }
-         vehiculos[cantidadVehiculos].Abonar(costoFinal);
-      }
-      public string GenerarTicket()
-      {
-
-         string patente = "Patente: " + vehiculos[cantidadVehiculos].Patente.ToString();
-         string tipo = "Tipo: " + vehiculos[cantidadVehiculos].Tipovehiculo.ToString();
-         string paquetes = "Paquetes tipo A: " + vehiculos[cantidadVehiculos].TipoA.ToString() +
-                           "Paquetes tipo B: " + vehiculos[cantidadVehiculos].TipoB.ToString() +
-                           "Paquetes tipo C: " + vehiculos[cantidadVehiculos].TipoC.ToString();
-         string capacidad = "Capacidad: " + vehiculos[cantidadVehiculos].Capacidad.ToString();
-         string carga = "Carga: " + vehiculos[cantidadVehiculos].Carga.ToString();
-         string abona = "Abona: " + vehiculos[cantidadVehiculos].Abona.ToString();
-
-         string ticket = patente + "\n" + tipo + "\n" + paquetes + "\n" + capacidad + "\n" + carga + "\n" + abona;
-
-         return ticket;
-      }
-
-      public void OrdenarMultados()
-      {
-         int n = multados.Length;
-         Vehiculo vehiculoTemp = null;
-         for (int i = 0; i < n - 1; i++)
-         {
-            for (int j = 0; j < n - i - 1; j++)
+        }
+       
+        public bool CargarVehiculo(string tipo, int patente, double capacidad, int tipoA, int tipoB, int tipoC, bool dia, int minutos, string fechaRegistro)
+        {
+            bool multado = false;
+            Vehiculo vehiculo = new Vehiculo(tipo, patente, capacidad, tipoA, tipoB, tipoC, fechaRegistro);
+            vehiculos[cantidadVehiculos] = vehiculo;
+            recargoPeso = CalcularRecargoPeso(vehiculo.Carga, vehiculo.Capacidad);
+            if (nuevoMultado)
             {
-               if (multados[j].Patente > multados[j + 1].Patente)
-               {
-                  vehiculoTemp = multados[j];
-                  multados[j] = multados[j + 1];
-                  multados[j + 1] = vehiculoTemp;
-               }
+                multado = true;
+                //OrdenarMultados();
+                nuevoMultado = false;
             }
-         }
+            recargoDia = VerificarDiaHora(dia, minutos);
+            CalcularCosto();
+            cantidadVehiculos++;
 
-      }
+            return multado;
+        }
+        public Vehiculo[] Multados
+        {
+            get { return this.multados; }
+        }
+        public double CalcularRecargoPeso(int cargaVehiculo, double capacidadVehiculo)
+        {
+            int carga = cargaVehiculo;
+            double capacidad = capacidadVehiculo;
+            double recargo = 0;
+            double excesoCarga = carga - capacidad;
 
-      public int BuscarMultado(string patente)
-      {
-         int multado = 0;
-         for (int i = 0; i < multados.Length; i++)
-         {
-            if (multados[i].Patente.ToString() == patente)
+            if (excesoCarga > 50)
             {
-               multado = i;
+                recargo = 1.5; //Recargo 50%
+                vehiculos[cantidadVehiculos].MultarVehiculo(); //y multa
+                multados[multas] = vehiculos[cantidadVehiculos];
+                multas++;
+                nuevoMultado = true;
+            }
+            else if (excesoCarga > 10)
+            {
+                recargo = 1.18; //Recargo 18%
+            }
+            else if (excesoCarga > -10)
+            {
+                recargo = 0.95; //Bonificacion 5%
+            }
+            else if (excesoCarga > -150)
+            {
+                recargo = 1.07; //Recargo 7%
             }
             else
             {
-               multado = -2;
+                recargo = 1.10; //Recargo 10%
             }
-         }
-         return multado;
-      }
+            return recargo;
+        }
 
-      public string GenerarResumenMulta(int multado)
-      {
-         string dia = "Fecha de registro: " + multados[multado].FechaRegistro.ToString();
-         string pat = "Patente: " + multados[multado].Patente.ToString();
-         string tipo = "Tipo: " + multados[multado].Tipovehiculo.ToString();
-         string abona = "Abona: " + multados[multado].Abona.ToString();
+        public double VerificarDiaHora(bool domingo, int minutos)
+        {
+            double recargo;
+            if (minutos < 360 && minutos > 1200)
+            {
+                recargo = 1.08; //Recargo 8%
+                if (domingo)
+                {
+                    vehiculos[cantidadVehiculos].AplicarFijo();
+                }
+            }
+            else
+            {
+                recargo = 0.98; //Bonificacion 2%
+            }
+            return recargo;
+        }
 
-         string resumen = dia + "\n" + pat + "\n" + tipo + "\n" + abona;
+        public void CalcularCosto()
+        {
+            double costoFinal = 0;
+            double costoBase = vehiculos[cantidadVehiculos].Carga * costoKg; //100
+            double costoConPeso = costoBase * recargoPeso;                   //150
+            double costoConDia = costoConPeso * recargoDia;                  //150*1.08 (+8%)
+            costoFinal += costoConDia;                                       //162
+            if (vehiculos[cantidadVehiculos].Multado)
+            {
+                costoFinal = valorMulta;                                      //+5000
+            }
+            if (vehiculos[cantidadVehiculos].ValorFijo)
+            {
+                costoFinal += valorFijo;                                      //+3500
+            }
+            vehiculos[cantidadVehiculos].Abonar(costoFinal);
+        }
+        public string GenerarTicket()
+        {
+            int cant = cantidadVehiculos -1;
+            string patente = "Patente: " + vehiculos[cant].Patente.ToString();
+            string tipo = "Tipo: " + vehiculos[cant].Tipovehiculo.ToString();
+            string paquetes = "Paquetes tipo A: " + vehiculos[cant].TipoA.ToString() +
+                              "Paquetes tipo B: " + vehiculos[cant].TipoB.ToString() +
+                              "Paquetes tipo C: " + vehiculos[cant].TipoC.ToString();
+            string capacidad = "Capacidad: " + vehiculos[cant].Capacidad.ToString();
+            string carga = "Carga: " + vehiculos[cant].Carga.ToString();
+            string abona = "Abona: " + vehiculos[cant].Abona.ToString();
 
-         return resumen;
-      }
-   }
+            string ticket = patente + "\n" + tipo + "\n" + paquetes + "\n" + capacidad + "\n" + carga + "\n" + abona;
+
+            return ticket;
+        }
+
+        public static void OrdenarMultados(Vehiculo[] multados)
+        {
+            int n = multados.Length;
+            Vehiculo vehiculoTemp = null;
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = 0; j < n - i - 1; j++)
+                {
+                    if (multados[j].Patente > multados[j + 1].Patente)
+                    {
+                        vehiculoTemp = multados[j];
+                        multados[j] = multados[j + 1];
+                        multados[j + 1] = vehiculoTemp;
+                    }
+                }
+            }
+
+        }
+
+        public static int BuscarMultado(string patente, Vehiculo[] multados)
+        {
+            int multado = 0;
+            bool Encontrado = false;
+            while(Encontrado == false)
+            {
+                if (multados[multado].Patente.ToString() == patente)
+                {
+                    Encontrado = true;
+                }
+                else
+                {
+                    multado++;
+                }
+                if (multado == multados.Length)
+                {
+                    multado = -1;
+                    Encontrado = true;
+                }
+
+            }
+            return multado;
+        }
+
+        public static string GenerarResumenMulta(int multado, Vehiculo[] multados)
+        {
+            string dia = "Fecha de registro: " + multados[multado].FechaRegistro.ToString();
+            string pat = "Patente: " + multados[multado].Patente.ToString();
+            string tipo = "Tipo: " + multados[multado].Tipovehiculo.ToString();
+            string abona = "Abona: " + multados[multado].Abona.ToString();
+
+            string resumen = dia + "\n" + pat + "\n" + tipo + "\n" + abona;
+
+            return resumen;
+        }
+
+
+        public Vehiculo[] GenerarArrayNuevoMultas()
+        {
+            int cont = 0;
+            for (int i = 0; i < Multados.Length; i++)
+            {
+                if (Multados[i] != null)
+                {
+                    cont++;
+                }
+            }
+            Vehiculo[] vehiculos= new Vehiculo[cont];
+            int contaux = 0;
+            for (int i = 0; i < Multados.Length; i++)
+            {
+                if (Multados[i] != null)
+                {
+                    vehiculos[contaux] = Multados[i];
+                    contaux++;
+                }
+            }
+            return vehiculos;
+
+        }
+    }
 }

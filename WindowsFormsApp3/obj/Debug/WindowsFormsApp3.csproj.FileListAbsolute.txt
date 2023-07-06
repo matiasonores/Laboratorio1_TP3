@@ -18,3 +18,16 @@ C:\Users\Topito\Downloads\Ejercicio1_tp3\Ejercicio1_tp3\WindowsFormsApp3\obj\Deb
 C:\Users\Topito\Downloads\Ejercicio1_tp3\Ejercicio1_tp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.csproj.CoreCompileInputs.cache
 C:\Users\Topito\Downloads\Ejercicio1_tp3\Ejercicio1_tp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.exe
 C:\Users\Topito\Downloads\Ejercicio1_tp3\Ejercicio1_tp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.pdb
+D:\Usuario\OneDrive\Escritorio\Facultad\Tp3Lab1\Laboratorio1_TP3\WindowsFormsApp3\bin\Debug\WindowsFormsApp3.exe.config
+D:\Usuario\OneDrive\Escritorio\Facultad\Tp3Lab1\Laboratorio1_TP3\WindowsFormsApp3\bin\Debug\WindowsFormsApp3.exe
+D:\Usuario\OneDrive\Escritorio\Facultad\Tp3Lab1\Laboratorio1_TP3\WindowsFormsApp3\bin\Debug\WindowsFormsApp3.pdb
+D:\Usuario\OneDrive\Escritorio\Facultad\Tp3Lab1\Laboratorio1_TP3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.csproj.AssemblyReference.cache
+D:\Usuario\OneDrive\Escritorio\Facultad\Tp3Lab1\Laboratorio1_TP3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.csproj.SuggestedBindingRedirects.cache
+D:\Usuario\OneDrive\Escritorio\Facultad\Tp3Lab1\Laboratorio1_TP3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Form1.resources
+D:\Usuario\OneDrive\Escritorio\Facultad\Tp3Lab1\Laboratorio1_TP3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Properties.Resources.resources
+D:\Usuario\OneDrive\Escritorio\Facultad\Tp3Lab1\Laboratorio1_TP3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.csproj.GenerateResource.cache
+D:\Usuario\OneDrive\Escritorio\Facultad\Tp3Lab1\Laboratorio1_TP3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.csproj.CoreCompileInputs.cache
+D:\Usuario\OneDrive\Escritorio\Facultad\Tp3Lab1\Laboratorio1_TP3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.exe
+D:\Usuario\OneDrive\Escritorio\Facultad\Tp3Lab1\Laboratorio1_TP3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.pdb
+D:\Usuario\OneDrive\Escritorio\Facultad\Tp3Lab1\Laboratorio1_TP3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.ConfirmacionFinalizacion.resources
+D:\Usuario\OneDrive\Escritorio\Facultad\Tp3Lab1\Laboratorio1_TP3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Lista_Multados.resources

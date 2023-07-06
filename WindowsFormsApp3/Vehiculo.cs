@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp3
 {
-   class Vehiculo
+   public class Vehiculo
    {
       private int pesoA = 5; //Constante de peso A
       private int pesoB = 15; //Constante de peso A
