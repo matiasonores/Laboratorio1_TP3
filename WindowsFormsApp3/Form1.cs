@@ -16,11 +16,9 @@ namespace WindowsFormsApp3
         {
             InitializeComponent();
         }
+      Sistema sistema = new Sistema();
 
-        Vehiculo[] multado = new Vehiculo[20];
-        
-
-        private void btnAgregar_Click(object sender, EventArgs e)
+      private void btnAgregar_Click(object sender, EventArgs e)
         {
             string vehiculo="";
             if (rBFurgon.Checked) 
@@ -31,14 +29,18 @@ namespace WindowsFormsApp3
             {
                 vehiculo = "Camion";
             }
-            int patente = Convert.ToInt32(txtPatente.Text);
-            double capacidad = Convert.ToDouble(txtCapacidad.Text);
-            string dia = (txtDias.Text);
-            int tipoA = Convert.ToInt32(numPaquetesA);
-            int tipoB = Convert.ToInt32(numPaquetesB);
-            int tipoC = Convert.ToInt32(numPaquetesC);
+         int patente = Convert.ToInt32(txtPatente.Text);
+         double capacidad = Convert.ToDouble(txtCapacidad.Text);
+         string dia = (txtDias.Text);
+         int tipoA = Convert.ToInt32(numPaquetesA);
+         int tipoB = Convert.ToInt32(numPaquetesB);
+         int tipoC = Convert.ToInt32(numPaquetesC);
+         int minutos = Convert.ToInt32(numHr) * 60;
+         minutos += Convert.ToInt32(numMin);
 
-            Vehiculo transporte = new Vehiculo(vehiculo, patente, capacidad, tipoA, tipoB, tipoC);
+         Vehiculo transporte = new Vehiculo(vehiculo, patente, capacidad, tipoA, tipoB, tipoC);
+         string ticket = sistema.GenerarTicket();
+         MessageBox.Show(ticket);
 
         }
     }

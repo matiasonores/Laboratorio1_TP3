@@ -8,3 +8,13 @@ C:\Users\micac\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Debug\WindowsF
 C:\Users\micac\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.csproj.CoreCompileInputs.cache
 C:\Users\micac\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.exe
 C:\Users\micac\source\repos\WindowsFormsApp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.pdb
+C:\Users\Topito\Downloads\Ejercicio1_tp3\Ejercicio1_tp3\WindowsFormsApp3\bin\Debug\WindowsFormsApp3.exe.config
+C:\Users\Topito\Downloads\Ejercicio1_tp3\Ejercicio1_tp3\WindowsFormsApp3\bin\Debug\WindowsFormsApp3.exe
+C:\Users\Topito\Downloads\Ejercicio1_tp3\Ejercicio1_tp3\WindowsFormsApp3\bin\Debug\WindowsFormsApp3.pdb
+C:\Users\Topito\Downloads\Ejercicio1_tp3\Ejercicio1_tp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.csproj.AssemblyReference.cache
+C:\Users\Topito\Downloads\Ejercicio1_tp3\Ejercicio1_tp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Form1.resources
+C:\Users\Topito\Downloads\Ejercicio1_tp3\Ejercicio1_tp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Properties.Resources.resources
+C:\Users\Topito\Downloads\Ejercicio1_tp3\Ejercicio1_tp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.csproj.GenerateResource.cache
+C:\Users\Topito\Downloads\Ejercicio1_tp3\Ejercicio1_tp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.csproj.CoreCompileInputs.cache
+C:\Users\Topito\Downloads\Ejercicio1_tp3\Ejercicio1_tp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.exe
+C:\Users\Topito\Downloads\Ejercicio1_tp3\Ejercicio1_tp3\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.pdb
