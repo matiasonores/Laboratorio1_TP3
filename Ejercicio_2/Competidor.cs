@@ -58,6 +58,6 @@ namespace Ejercicio_2
             }
             return puntos;
         }
-
+      
     }
 }

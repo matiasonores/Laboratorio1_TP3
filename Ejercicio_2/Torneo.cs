@@ -51,7 +51,7 @@ namespace Ejercicio_2
         public void AgregarCompetidor(string nombre,string club,int edad)
         {
             competidores[cantCompetidores] = new Competidor(nombre, edad, club,this.cantRondas);
-            if (edad > 18)
+            if (edad > 17)
             {
                 cantidadMayores++;
             } else
@@ -114,7 +114,22 @@ namespace Ejercicio_2
             return competidoresCopia;
         }
        
+      public string VerFlechas(Competidor competidor)
+      {
+         string flechas="";
+         for (int i = 0; i < cantRondas; i++)
+         { 
+            flechas += "Ronda " + (i+1) + ":    ";
 
+            for (int  j= 0; j < 5; j++)
+            {
+               flechas += competidor.Puntaje[i, j].ToString() +"\t";
+            }
+
+            flechas += "\n";
+         }
+         return flechas;
+      }
     }
 }
 //int puntaje = competidores[i].CalcularPuntaje(cantRondas);

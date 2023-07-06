@@ -1,0 +1,13 @@
+C:\Users\Matias Onores\Desktop\Laboratorio1_TP3-develop\Laboratorio1_TP3-develop\WindowsFormsApp3\bin\Debug\WindowsFormsApp3.exe.config
+C:\Users\Matias Onores\Desktop\Laboratorio1_TP3-develop\Laboratorio1_TP3-develop\WindowsFormsApp3\bin\Debug\WindowsFormsApp3.exe
+C:\Users\Matias Onores\Desktop\Laboratorio1_TP3-develop\Laboratorio1_TP3-develop\WindowsFormsApp3\bin\Debug\WindowsFormsApp3.pdb
+C:\Users\Matias Onores\Desktop\Laboratorio1_TP3-develop\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\Ejercicio_1.csproj.AssemblyReference.cache
+C:\Users\Matias Onores\Desktop\Laboratorio1_TP3-develop\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\Ejercicio_1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Matias Onores\Desktop\Laboratorio1_TP3-develop\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.ConfirmacionFinalizacion.resources
+C:\Users\Matias Onores\Desktop\Laboratorio1_TP3-develop\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Form1.resources
+C:\Users\Matias Onores\Desktop\Laboratorio1_TP3-develop\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Lista_Multados.resources
+C:\Users\Matias Onores\Desktop\Laboratorio1_TP3-develop\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Properties.Resources.resources
+C:\Users\Matias Onores\Desktop\Laboratorio1_TP3-develop\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\Ejercicio_1.csproj.GenerateResource.cache
+C:\Users\Matias Onores\Desktop\Laboratorio1_TP3-develop\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\Ejercicio_1.csproj.CoreCompileInputs.cache
+C:\Users\Matias Onores\Desktop\Laboratorio1_TP3-develop\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.exe
+C:\Users\Matias Onores\Desktop\Laboratorio1_TP3-develop\Laboratorio1_TP3-develop\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.pdb
