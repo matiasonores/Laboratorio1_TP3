@@ -145,8 +145,8 @@ namespace WindowsFormsApp3
             string patente = "Patente: " + vehiculos[cant].Patente.ToString();
             string tipo = "Tipo: " + vehiculos[cant].Tipovehiculo.ToString();
             string paquetes = "Paquetes tipo A: " + vehiculos[cant].TipoA.ToString() +
-                              "Paquetes tipo B: " + vehiculos[cant].TipoB.ToString() +
-                              "Paquetes tipo C: " + vehiculos[cant].TipoC.ToString();
+                              "\nPaquetes tipo B: " + vehiculos[cant].TipoB.ToString() +
+                              "\nPaquetes tipo C: " + vehiculos[cant].TipoC.ToString();
             string capacidad = "Capacidad: " + vehiculos[cant].Capacidad.ToString();
             string carga = "Carga: " + vehiculos[cant].Carga.ToString();
             string abona = "Abona: " + vehiculos[cant].Abona.ToString();
